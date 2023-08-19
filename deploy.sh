@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python -m pip install --upgrade pip
+python install --upgrade pip
