@@ -1,7 +1,6 @@
 import streamlit as st
 import pickle
 import sklearn
-import pyttsx3fre
 import numpy as np
 
 # import the model
@@ -64,31 +63,9 @@ if st.button('Predict Price'):
     query = np.array([company,type,ram,weight,touchscreen,ips,ppi,cpu,hdd,ssd,gpu,os])
 
     query = query.reshape(1,12)
-    # st.title("The predicted price of this configuration is " + str(int(np.exp(pipe.predict(query)[0]))))
-    text="  The predicted price of this configuration is " + str(int(np.exp(pipe.predict(query)[0]))) +"Thanks for visting Indrajeet's website"
     st.title("The predicted price of this configuration is " + str(int(np.exp(pipe.predict(query)[0]))))
-    engine = pyttsx3.init()
-
-    voices = engine.getProperty("voices")
 
 
-    # Select the female voice
-    engine.setProperty("voice", voices[1].id)
 
-    # Set the speaking rate
-    engine.setProperty("rate", 150)
 
-    # Set the pitch
-    engine.setProperty("pitch", 0.8)
-
-    # Set the volume
-    engine.setProperty("volume", 0.8)
-    # Get the text to be converted to audio
-    # text = st.text_input("Enter your text:")
-
-    # Convert the text to audio
-    engine.say(text)
-
-    # Play the audio
-    engine.runAndWait()
 
