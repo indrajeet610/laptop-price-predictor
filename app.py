@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import sklearn
-import pyttsx3
+import pyttsx3fre
 import numpy as np
 
 # import the model
